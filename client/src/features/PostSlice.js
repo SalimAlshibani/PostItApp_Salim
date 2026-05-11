@@ -11,7 +11,7 @@ const initialState={
  
 export const getPosts=createAsyncThunk("post/getPosts",async()=>{
     try{
-        const response=await axios.get("http://localhost:3002/getPosts");
+        const response=await axios.get("https://postitapp-salim.onrender.com");
         return response.data.posts;
     }
     catch(error){
@@ -21,7 +21,7 @@ export const getPosts=createAsyncThunk("post/getPosts",async()=>{
  
 export const delPost=createAsyncThunk("post/delPost",async(postid)=>{
     try{
-        const response=await axios.delete(`http://localhost:3002/delPost/${postid}`);
+        const response=await axios.delete(`https://postitapp-salim.onrender.com/${postid}`);
         return response.data;
     }
     catch(error){
@@ -31,7 +31,7 @@ export const delPost=createAsyncThunk("post/delPost",async(postid)=>{
 
 export const updPost=createAsyncThunk("post/updPost",async(pdata)=>{
     try{
-        const response=await axios.put("http://localhost:3002/updPost",pdata);
+        const response=await axios.put("https://postitapp-salim.onrender.com",pdata);
         return response.data;
     }
     catch(error){
